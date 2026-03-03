@@ -1,0 +1,174 @@
+/* reset de CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* inicio estilos header */
+
+    header{
+        background-image: url(../img/img-fondo.jpg);
+        padding: 5px;
+    }
+
+    /* estilo logo */
+
+    header div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header div a img{
+        width: 80%;
+    }
+
+    /* color de fondo dropdown */
+    .color-bg{
+        background-color: black;
+    }
+    
+/* inicio estilos main */
+
+    main{
+    background-color: whitesmoke;
+    padding: 30px;
+    }
+
+    /* grid */
+    .container-fluid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    /* historia */
+    .seccion-historia div {
+        display: grid;
+        grid-template-columns: 300px 1fr; 
+        gap: 20px;
+        align-items: center;
+    }
+
+    .seccion-historia h1, .seccion-historia p{
+        grid-column: 1 / -1;
+    }
+
+    /* personajes */
+    .seccion-personajes h2, .seccion-personajes p {
+        grid-column: 1 / -1;
+    }
+
+    .seccion-personajes {
+        display: grid;
+        gap: 20px;
+    }
+
+    .seccion-personajes .f-maximal,.seccion-personajes .f-predacon {
+        display: inline-block; 
+        width: 45%; 
+        text-align: center;
+    }
+
+    .seccion-personajes div:has(.faccion) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* temporadas */
+    .seccion-temporadas div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+        align-items: start;
+    }
+
+    .seccion-temporadas h2 {
+        grid-column: 1 / -1; 
+    }
+
+    /* estilo img intro  */
+
+    .img-intro{
+        width: 90%;
+        }
+    
+    /* estilo img facciones */
+
+    .faccion{
+        width: 500px;
+    }
+
+    /* estilos facciones*/
+
+    .contenedor-facciones ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    /* estilo temporadas */
+
+    article ul{
+        list-style: none;
+    }
+
+/* inicio estilos footer */
+
+footer{
+    background-image: url(../img/img-fondo.jpg);
+    padding: 10px;
+    text-align: center;
+    }
+
+    /* estilos redes-sociales */
+
+.redes-sociales{
+    width: 1.5%;
+    list-style: none;
+    }
+
+/* mq */
+
+    /* mobile */
+
+    @media (max-width: 600px) {
+    header div img {
+        width: 60%;
+    }
+
+    .seccion-historia div, .seccion-personajes div:has(.faccion),.seccion-temporadas .grid-temporadas {
+        grid-template-columns: 1fr ;
+        text-align: center;
+    }
+    
+    .img-intro {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .faccion {
+        width: 450px; 
+        margin: 0 auto;
+    }
+
+    .seccion-personajes .f-maximal, 
+    .seccion-personajes .f-predacon {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .redes-sociales {
+        width: 30px;
+        margin-right: 15px;
+    }
+    }
+
+    /* desktop */
+
+    @media (min-width: 1024){
+    }
