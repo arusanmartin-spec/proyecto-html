@@ -196,6 +196,7 @@ footer{
     .seccion-personajes .f-predacon {
         width: 100%;
         margin-bottom: 30px;
+        overflow-x: scroll;
     }
 
     .redes-sociales {
