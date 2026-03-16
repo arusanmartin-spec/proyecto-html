@@ -232,7 +232,7 @@ footer{
     /* mobile */
 
     @media (max-width: 600px){
-       header div img {
+    header div img {
         width: 60%;  
     }
    
@@ -268,9 +268,9 @@ footer{
 
     /*  tablet */
 
-    @media (min-width: 600px){
+    @media (max-width: 1024px){
 
-        .seccion-historia div {
+    .seccion-historia div {
         grid-template-columns: 1fr 1fr; 
         text-align: left;
     }
@@ -291,8 +291,8 @@ footer{
     
     /* desktop */
 
-    @media (min-width: 1024px){
-        .f-maximal ul li, .f-predacon ul li {
+    @media (min-width: 1440px){
+    .f-maximal ul li, .f-predacon ul li {
         grid-template-columns: repeat(4, 1fr);
     }
 
