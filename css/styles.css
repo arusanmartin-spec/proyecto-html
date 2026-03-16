@@ -82,6 +82,7 @@
     }
 
    /* estilos facciones*/
+
     .contenedor-facciones ul{
         list-style: none;
         display: flex;
@@ -89,35 +90,95 @@
         justify-content: center;
         align-items: center;
     }
+
    /* separacion personajes maximal / predacon*/
+   
+   /* estlio general  */
+
     .f-maximal ul, .f-predacon ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
+    /* grid personajes  */
+
     .f-maximal ul li, .f-predacon ul li {
         margin-bottom: 50px;
         display: grid;
         grid-template-columns: repeat(4, 1fr); 
-        grid-template-rows: repeat(2, auto); 
+        grid-template-rows: auto auto; 
         gap: 15px;
         align-items: start; 
     }
 
     .f-maximal ul li strong, .f-predacon ul li strong {
         grid-column: 1 / 5; 
-        align-items: start;
         font-size: 1.4rem;
         margin-bottom: 10px;
-        color: black;
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
     }
 
-    .f-maximal img, .f-predacon img {
-        width: 85px; 
-        height: 85px; 
-        object-fit: cover;
-        border-radius: 4px;
+    /* efectos */
+
+    .contenedor-efecto {
+        position: relative; 
+        width: 100%;
+        height: 110px;     
+        overflow: hidden;   
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .contenedor-efecto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+        transition: transform 0.4s ease; 
+    }
+
+    /* texto */
+
+    .capa-texto {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+
+    /* Color Verde para Maximales */
+    .f-maximal .capa-texto {
+        background: rgba(46, 204, 113, 0.8); 
+    }
+
+    /* Color Rojo para Predacons */
+    .f-predacon .capa-texto {
+        background: rgba(192, 57, 43, 0.8); 
+    }
+
+    /*  efectos de hover */
+    
+    .contenedor-efecto:hover .capa-texto {
+        opacity: 1;
+    }
+
+    .contenedor-efecto:hover img {
+        transform: scale(1.1);
     }
 
     /* temporadas */
@@ -207,7 +268,7 @@ footer{
 
     /*  tablet */
 
-    @media (min-width: 768px){
+    @media (max-width: 1024px){
         .f-maximal ul li, .f-predacon ul li {
         grid-template-columns: repeat(3, 1fr);
     }
