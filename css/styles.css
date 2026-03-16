@@ -172,7 +172,7 @@
     }
 
     /*  efectos de hover */
-    
+
     .contenedor-efecto:hover .capa-texto {
         opacity: 1;
     }
@@ -268,13 +268,23 @@ footer{
 
     /*  tablet */
 
-    @media (max-width: 1024px){
+    @media (min-width: 600px){
+
+        .seccion-historia div {
+        grid-template-columns: 1fr 1fr; 
+        text-align: left;
+    }
+
         .f-maximal ul li, .f-predacon ul li {
         grid-template-columns: repeat(3, 1fr);
     }
        
     .f-maximal ul li strong, .f-predacon ul li strong {
         grid-column: 1 / 4;
+    }
+
+    .seccion-temporadas .grid-temporadas {
+        grid-template-columns: 1fr 1fr; 
     }
     
     }
