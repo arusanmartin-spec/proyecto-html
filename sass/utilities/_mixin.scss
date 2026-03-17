@@ -1,0 +1,17 @@
+
+@mixin flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+@mixin grilla($colum, $row){
+    grid-template-columns: $colum;
+    grid-template-rows: $row;
+}
+
+@mixin espacios($gap, $padding, $margin){
+    gap: $gap;
+    padding: $padding;
+    margin: $margin;
+}

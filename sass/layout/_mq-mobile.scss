@@ -1,0 +1,46 @@
+//variables 
+@use "../utilities/variables.scss" as *;
+//mixin 
+@use "../utilities/mixin" as *;
+/*MQ*/
+/*mobile*/
+@media (max-width: 600px){
+        header{
+            div{
+                img{
+                    width: 60%;
+                }
+            }
+        }
+        .seccion-historia div, 
+        .seccion-personajes div:has(.faccion), 
+        .seccion-temporadas .grid-temporadas {
+        @include grilla(1fr,auto);
+        text-align: center;
+        overflow-x: scroll;
+        }
+        
+
+            .img-intro {
+        width: 60%;
+        margin-bottom: 20px;
+        }
+
+        .faccion {
+        width: 450px; 
+        margin: 0 auto;
+        }
+        .seccion-personajes{
+            .f-maximal,.f-predacon{
+                    width: 100%;
+                    margin-bottom: 30px;
+                    overflow-x: scroll;   
+            }
+        }
+
+        .redes-sociales {
+        width: 30px;
+        margin-right: 15px;
+    }
+
+    }

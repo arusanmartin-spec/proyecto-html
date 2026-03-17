@@ -1,0 +1,105 @@
+//variables 
+@use "../utilities/variables.scss" as *;
+//mixin 
+@use "../utilities/mixin" as *;
+
+/*estilo facciones*/
+.contenedor-facciones{
+    ul{
+        list-style: none;
+        @include flex;
+        flex-direction: column;
+    }
+}
+
+   /* separacion personajes maximal / predacon*/
+   
+   /* estlio general  */
+
+.f-maximal, .f-predacon{
+    ul{
+        list-style: none;
+        @include espacios(none,0,0);
+    }
+}
+/*grid personajes*/
+
+.f-maximal,.f-predacon{
+    ul{
+        li{
+            margin-bottom: 50px;
+            display: grid;
+            @include grilla(repeat(4 1fr), auto auto);
+            gap: 15px;
+            align-items: start;
+            strong{
+                    grid-column: 1 / 5; 
+                    font-size: 1.4rem;
+                    margin-bottom: 10px;
+                    color: $color-nombrepj;
+                    border-bottom: 2px solid #ddd;
+                    padding-bottom: 5px;   
+            } 
+        }
+    }
+}
+/* efectos*/
+.contenedor-efecto{
+        position: relative; 
+        width: 100%;
+        height: 110px;     
+        overflow: hidden;   
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);    
+}
+.contenedor-efecto{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+        transition: transform 0.4s ease;   
+    }
+}
+
+/*textos*/
+
+.capa-texto{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        opacity: 0; 
+        transition: opacity 0.3s ease;    
+}
+ /* Color Verde para Maximales */
+.f-maximal{
+    .capa-texto{
+        background: $color-bgmaximal;
+    }
+}
+/* Color Rojo para Predacons */
+.f-predacon{
+    .capa-texto{
+        background: $color-bgpredacon;
+    }
+}
+/*  efectos de hover */
+.contenedor-efecto:hover{
+        .capa-texto{
+            opacity: 1;
+        }
+        .img{
+            transform: scale(1.1);
+        }
+}

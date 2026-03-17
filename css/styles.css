@@ -1,307 +1,278 @@
-/* reset de CSS */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/* inicio estilos header */
 
-      /* estilo logo */
+/*header*/
+header {
+  background-image: url(../img/img-fondo.jpg);
+  padding: 5px;
+}
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header a img {
+  width: 80%;
+}
+header .navbar {
+  margin-left: 15px;
+  margin-right: 15px;
+}
 
-    header{
-        background-image: url(../img/img-fondo.jpg);
-        padding: 5px;
-    }
+/*main*/
+main {
+  background-color: whitesmoke;
+  gap: none;
+  padding: 30px;
+  margin: none;
+}
 
-    header div{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+/*grid*/
+.container-principal {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: none;
+  gap: 40px;
+  padding: 20px;
+  margin: none;
+}
 
-    header div a img{
-        width: 80%;
-    }
+/*historia*/
+.seccion-historia div {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: none;
+  gap: 20px;
+  align-items: center;
+}
 
-    .navbar{
-        margin-left: 15px;
-        margin-right: 15px;
-    }
+.seccion-historia h1, .seccion-historia p {
+  grid-column: 1/-1;
+}
 
-/* inicio estilos main */
+/*personajes home*/
+.seccion-personajes h2, .seccion-personajes p {
+  grid-column: 1/-1;
+}
 
-    main{
-    background-color: whitesmoke;
-    padding: 30px;
-    }
+.seccion-personajes {
+  display: grid;
+  gap: 20px;
+}
 
-    /* grid */
-    
-    .container-principal {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 20px;
-    }
+.seccion-personajes .f-maximal, .seccion-personajes .f-predacon {
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+}
 
-    /* historia */
+.seccion-personajes div:has(.faccion) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+  gap: 20px;
+}
 
-    .seccion-historia div {
-        display: grid;
-        grid-template-columns: 300px 1fr; 
-        gap: 20px;
-        align-items: center;
-    }
+/* estilo img intro home  */
+.img-intro {
+  width: 90%;
+}
 
-    .seccion-historia h1, .seccion-historia p{
-        grid-column: 1 / -1;
-    }
+/* estilo img facciones home */
+.faccion {
+  width: 500px;
+}
 
-    /* personajes */
+/*estilo facciones*/
+.contenedor-facciones ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-    .seccion-personajes h2, .seccion-personajes p {
-        grid-column: 1 / -1;
-    }
+/* separacion personajes maximal / predacon*/
+/* estlio general  */
+.f-maximal ul, .f-predacon ul {
+  list-style: none;
+  gap: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .seccion-personajes {
-        display: grid;
-        gap: 20px;
-    }
+/*grid personajes*/
+.f-maximal ul li, .f-predacon ul li {
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  grid-template-rows: auto auto;
+  gap: 15px;
+  align-items: start;
+}
+.f-maximal ul li strong, .f-predacon ul li strong {
+  grid-column: 1/5;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
 
-    .seccion-personajes .f-maximal,.seccion-personajes .f-predacon {
-        display: inline-block; 
-        width: 45%; 
-        text-align: center;
-    }
+/* efectos*/
+.contenedor-efecto {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .seccion-personajes div:has(.faccion) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
+.contenedor-efecto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
 
-   /* estilos facciones*/
+/*textos*/
+.capa-texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-    .contenedor-facciones ul{
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+/* Color Verde para Maximales */
+.f-maximal .capa-texto {
+  background: rgba(46, 204, 113, 0.8);
+}
 
-   /* separacion personajes maximal / predacon*/
-   
-   /* estlio general  */
+/* Color Rojo para Predacons */
+.f-predacon .capa-texto {
+  background: rgba(192, 57, 43, 0.8);
+}
 
-    .f-maximal ul, .f-predacon ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+/*  efectos de hover */
+.contenedor-efecto:hover .capa-texto {
+  opacity: 1;
+}
+.contenedor-efecto:hover .img {
+  transform: scale(1.1);
+}
 
-    /* grid personajes  */
+/*temporadas*/
+article ul {
+  list-style: none;
+}
 
-    .f-maximal ul li, .f-predacon ul li {
-        margin-bottom: 50px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); 
-        grid-template-rows: auto auto; 
-        gap: 15px;
-        align-items: start; 
-    }
+.seccion-temporadas h1 {
+  grid-column: 1/-1;
+}
+.seccion-temporadas div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: none;
+  gap: 20px;
+  align-items: start;
+}
 
-    .f-maximal ul li strong, .f-predacon ul li strong {
-        grid-column: 1 / 5; 
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-        color: #333;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 5px;
-    }
+/*footer*/
+footer {
+  background-image: url(../img/img-fondo.jpg);
+  padding: 10px;
+  text-align: center;
+}
 
-    /* efectos */
+/* estilos redes-sociales */
+.redes-sociales {
+  width: 1.5%;
+  list-style: none;
+}
 
-    .contenedor-efecto {
-        position: relative; 
-        width: 100%;
-        height: 110px;     
-        overflow: hidden;   
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .contenedor-efecto img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; 
-        display: block;
-        transition: transform 0.4s ease; 
-    }
-
-    /* texto */
-
-    .capa-texto {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 10px;
-        font-size: 0.75rem;
-        font-weight: bold;
-        color: white;
-        text-transform: uppercase;
-        opacity: 0; 
-        transition: opacity 0.3s ease;
-    }
-
-    /* Color Verde para Maximales */
-    .f-maximal .capa-texto {
-        background: rgba(46, 204, 113, 0.8); 
-    }
-
-    /* Color Rojo para Predacons */
-    .f-predacon .capa-texto {
-        background: rgba(192, 57, 43, 0.8); 
-    }
-
-    /*  efectos de hover */
-
-    .contenedor-efecto:hover .capa-texto {
-        opacity: 1;
-    }
-
-    .contenedor-efecto:hover img {
-        transform: scale(1.1);
-    }
-
-    /* temporadas */
-    .seccion-temporadas div {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 20px;
-        align-items: start;
-    }
-
-    .seccion-temporadas h2 {
-        grid-column: 1 / -1; 
-    }
-
-    /* estilo img intro  */
-
-    .img-intro{
-        width: 90%;
-        }
-    
-    /* estilo img facciones */
-
-    .faccion{
-        width: 500px;
-
-    }
-
-    /* estilo temporadas */
-
-    article ul{
-        list-style: none;
-    }
-
-/* inicio estilos footer */
-
-footer{
-    background-image: url(../img/img-fondo.jpg);
-    padding: 10px;
+/*MQ*/
+/*mobile*/
+@media (max-width: 600px) {
+  header div img {
+    width: 60%;
+  }
+  .seccion-historia div,
+  .seccion-personajes div:has(.faccion),
+  .seccion-temporadas .grid-temporadas {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     text-align: center;
-    }
+    overflow-x: scroll;
+  }
+  .img-intro {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+  .faccion {
+    width: 450px;
+    margin: 0 auto;
+  }
+  .seccion-personajes .f-maximal, .seccion-personajes .f-predacon {
+    width: 100%;
+    margin-bottom: 30px;
+    overflow-x: scroll;
+  }
+  .redes-sociales {
+    width: 30px;
+    margin-right: 15px;
+  }
+}
+/*tablet*/
+@media (max-width: 1024px) {
+  .seccion-historia div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    text-align: left;
+  }
+  .f-maximal ul li, .f-predacon ul li {
+    grid-template-columns: repeat(3fr 1fr);
+    grid-template-rows: none;
+  }
+  .f-maximal ul li strong, .f-predacon ul li strong {
+    grid-column: 1/4;
+  }
+  .seccion-temporadas .grid-temporadas {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+}
+/*desktop*/
+@media (min-width: 1440px) {
+  .f-maximal ul li, .f-predacon ul li {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: none;
+  }
+  .f-maximal ul li strong, .f-predacon ul li strong {
+    grid-column: 1/5;
+  }
+  .seccion-personajes div:has(.faccion) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    gap: 50px;
+  }
+}
 
-    /* estilos redes-sociales */
-
-.redes-sociales{
-    width: 1.5%;
-    list-style: none;
-    }
-
-/* mq */
-
-    /* mobile */
-
-    @media (max-width: 600px){
-    header div img {
-        width: 60%;  
-    }
-   
-    .seccion-historia div, .seccion-personajes div:has(.faccion),.seccion-temporadas .grid-temporadas {
-        grid-template-columns: 1fr ;
-        grid-template-rows: auto;
-        text-align: center;
-        overflow-x: scroll;
-    }
-    
-    .img-intro {
-        width: 60%;
-        margin-bottom: 20px;
-    }
-
-    .faccion {
-        width: 450px; 
-        margin: 0 auto;
-    }
-
-    .seccion-personajes .f-maximal, 
-    .seccion-personajes .f-predacon {
-        width: 100%;
-        margin-bottom: 30px;
-        overflow-x: scroll;
-    }
-
-    .redes-sociales {
-        width: 30px;
-        margin-right: 15px;
-    }
-    }
-
-    /*  tablet */
-
-    @media (max-width: 1024px){
-
-    .seccion-historia div {
-        grid-template-columns: 1fr 1fr; 
-        text-align: left;
-    }
-
-        .f-maximal ul li, .f-predacon ul li {
-        grid-template-columns: repeat(3, 1fr);
-    }
-       
-    .f-maximal ul li strong, .f-predacon ul li strong {
-        grid-column: 1 / 4;
-    }
-
-    .seccion-temporadas .grid-temporadas {
-        grid-template-columns: 1fr 1fr; 
-    }
-    
-    }
-    
-    /* desktop */
-
-    @media (min-width: 1440px){
-    .f-maximal ul li, .f-predacon ul li {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .f-maximal ul li strong, .f-predacon ul li strong {
-        grid-column: 1 / 5;
-    }
-
-    .seccion-personajes div:has(.faccion) {
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-    }
-    }
+/*# sourceMappingURL=styles.css.map */

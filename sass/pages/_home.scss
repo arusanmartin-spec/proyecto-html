@@ -1,0 +1,69 @@
+//variables 
+@use "../utilities/variables.scss" as *;
+//mixin 
+@use "../utilities/mixin" as *;
+
+/*main*/ 
+main{
+    background-color: $color-fondo;
+    @include espacios (none ,30px, none)
+}
+
+/*grid*/
+.container-principal{
+    display: grid;
+    @include grilla(1fr,none);
+    @include espacios(40px, 20px, none);
+}
+
+/*historia*/
+
+.seccion-historia{
+    div{
+        display: grid;
+        @include grilla(300px 1fr,none);
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+.seccion-historia{
+    h1, p{
+        grid-column: 1/-1;
+    }
+}
+/*personajes home*/
+.seccion-personajes{
+    h2,p{
+        grid-column: 1/-1;
+    }
+}
+.seccion-personajes{
+    display: grid;
+    gap: 20px;
+}
+.seccion-personajes{
+    .f-maximal ,.f-predacon{
+        display: inline-block;
+        width: 45%;
+        text-align: center;
+    }
+}
+.seccion-personajes{
+            div:has(.faccion){
+            display:grid;
+            @include grilla(1fr 1fr,none);
+            gap:20px;}
+}
+
+    /* estilo img intro home  */
+
+    .img-intro{
+        width: 90%;
+        }
+   /* estilo img facciones home */
+
+    .faccion{
+        width: 500px;
+
+    }

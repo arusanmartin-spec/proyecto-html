@@ -1,0 +1,24 @@
+//variables 
+@use "../utilities/variables.scss" as *;
+//mixin 
+@use "../utilities/mixin" as *;
+
+/*desktop*/
+    @media (min-width: 1440px){
+        .f-maximal,.f-predacon{
+            ul{
+                li{
+                    @include grilla(repeat(4,1fr),none);
+                    strong{
+                        grid-column: 1/5;
+                    }
+                }
+            }
+        }
+        .seccion-personajes{
+            div:has(.faccion){
+                @include grilla(1fr 1fr,none);
+                gap:50px;
+            }
+        }
+    }

@@ -1,0 +1,24 @@
+//variables 
+@use "../utilities/variables.scss" as *;
+//mixin 
+@use "../utilities/mixin" as *;
+
+/*temporadas*/
+
+article{
+    ul{
+        list-style: none;
+    }
+}
+.seccion-temporadas{
+    h1{
+    grid-column: 1 / -1;   
+    }  
+    div{
+        display: grid;
+        @include grilla(repeat(3,1fr),none);
+        gap:20px;
+        align-items: start;
+    }
+}
+

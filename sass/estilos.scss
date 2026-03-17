@@ -1,0 +1,23 @@
+/*reset*/ 
+@use "base/reset";
+
+//home
+@use "pages/home";
+
+//personajes
+@use "pages/personajes";
+
+//temporadas
+@use "pages/temporadas";
+
+//footer
+@use "pages/footer";
+
+//MQ mobile
+@use "layout/mq-mobile";
+
+//MQ tablet
+@use "layout/mq-tablet";
+
+//MQ desktop
+@use "layout/mq-desktop";

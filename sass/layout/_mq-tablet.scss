@@ -1,0 +1,31 @@
+//variables 
+@use "../utilities/variables.scss" as *;
+//mixin 
+@use "../utilities/mixin" as *;
+
+/*tablet*/
+ @media (max-width: 1024px){
+       .seccion-historia{
+        div{
+            @include grilla (1fr 1fr, none);
+            text-align: left;
+        }
+       }
+
+       .f-maximal,.f-predacon{
+        ul{
+            li{
+                @include grilla(repeat(3fr 1fr),none);
+                strong{
+                    grid-column: 1/4;
+                }
+            }
+        }
+       }
+       .seccion-temporadas{
+            .grid-temporadas{
+                @include grilla(1fr 1fr,none)
+            }
+       }
+
+ }
