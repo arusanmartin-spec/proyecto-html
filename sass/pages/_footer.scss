@@ -8,6 +8,9 @@ footer{
     background-image: url(../img/img-fondo.jpg);
     padding: 10px;
     text-align: center;
+    p{
+        color: $color-texto;
+    }
     }
 
     /* estilos redes-sociales */
